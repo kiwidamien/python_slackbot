@@ -20,12 +20,12 @@ We need to setup in two places:
   You will be asked to authorize your bot. Do it!
 5.  Copy the slack token and OAuth into your `.env` file:
 ```bash
-FLASK_APP="hellobot.py"
-APP_ENV="production" # must be production!
-SLACK_CHANNEL=......  # id of the channel the bot posts in; will look something like "CBPK9CPCZ"
-OAuth=xoxp-........ # your OAuth will start with xoxp-
-SLACK_TOKEN=xoxb-...# your SLACK_TOKEN will start with xoxb-
-BOTNAME='HelloBot'  # name of the bot
+FLASK_APP=hellobot.py
+APP_ENV=production    # must be production!
+SLACK_CHANNEL=......  # id of the channel the bot posts in; e.g. #bot_test (no quotes)
+OAuth=xoxp-........   # your OAuth will start with xoxp-
+SLACK_TOKEN=xoxb-...  # your SLACK_TOKEN will start with xoxb-
+BOTNAME=HelloBot      # name of the bot
 ```
   Don't include the comment hashes (this will be important when deploying to Heroku)
 
@@ -64,6 +64,7 @@ To https://git.heroku.com/<appname>.git
 5. Go back to the slack page for your bot, and click on `Slash Commands`, under `Features`. Click on `Create New Command`.
   ![Adding a slash command](images/tutorial/add_slash_command.png)
 6. Fill out the create new command dialog with the following parameters:
+
   | Field | Value |
   | --- | --- |
   | Command | /hibot |
@@ -88,7 +89,7 @@ A lot of the code is boilerplate. If you want to add new "slash" commands, then 
 Once you have done all that, just run
 ```bash
 git add .
-git commit -m "You message"
+git commit -m "Your message"
 git push heroku master
 ```
 and your app should be deployed!
