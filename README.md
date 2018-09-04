@@ -82,4 +82,13 @@ You should now be able to call `/hibot en` and have it reply to you!
 
 A lot of the code is boilerplate. If you want to add new "slash" commands, then you will need to
 * Go to `app/actions.py` and add a new action that you want to call. Note that you can have the same `/command` map to multiple actions (notice how if you run `/hibot help` as a command, you will get a list of languages)
-* Go to `app/__init__.py` and add a new POST request for your new command. This post request should call the action you created.
+* Go to `app/__init__.py` and add a new POST request for your new command. This post request should call the action you created. You can use the commands to set the new actions.
+* Go to the Slack admin page for your bot, and add a new Slash command. You need to make sure that the new slash command has a request URL of `https://<appname>.herokuapp.com/<post url>`, where `/<post url>` matches the POST request you just made in `app/__init__.py`
+
+Once you have done all that, just run
+```bash
+git add .
+git commit -m "You message"
+git push heroku master
+```
+and your app should be deployed!
