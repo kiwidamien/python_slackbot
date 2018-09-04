@@ -6,7 +6,7 @@ from app.utils.slackhelper import SlackHelper
 def main():
    slackhelper = SlackHelper()
    actions = Actions(slackhelper)
-   actions.notify_channel()
+   actions.stay_alive()
 
 
 if __name__ == '__main__':

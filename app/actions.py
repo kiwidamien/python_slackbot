@@ -21,12 +21,13 @@ class Actions:
         self.user_info = user_info
         self.slackhelper = slackhelper
 
-    def notify_channel(self):
+    def stay_alive(self):
         print("Worker is running")
         while True:
-            print(f'Hello, message going to {self.slackhelper.slack_channel}')
+            print(f'Hello, pinging to stay alive')
             #self.slackhelper.post_message_to_channel('hi from hibot')
-            time.sleep(600)
+            # sleep for 20 minutes
+            time.sleep(1200)
 
     def say_hi(self, lang='en'):
         message = f"{translate.get(lang, 'Hello')} {self.user_info['user']['profile']['display_name']}"
