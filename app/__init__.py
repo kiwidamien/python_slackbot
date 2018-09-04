@@ -23,10 +23,10 @@ def create_app(config_name):
             command_text = command_text.split(' ')
             if command_text[0] == 'help':
                 response_body = actions.help()
-            elif len(command_text) == 1:
-                response_body = actions.say_hi(command_text[0])
+            elif len(command_text) == 2 and command_text[1] == 'all':
+                response_body = actions.say_hi_all(command_text[0])
             else:
-                response_body = actions.say_hi_all(command_text[0], command_text[1])
+                response_body = actions.say_hi(command_text[0])
         else:
             response_body = actions.say_hi()
 
