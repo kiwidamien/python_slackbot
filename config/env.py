@@ -18,7 +18,7 @@ class ProductionEnv(EnvConfig):
     TESTING = False
 
 app_env = {
-    'development': DevlopmentEnv,
+    'development': DevelopmentEnv,
     'testing': TestingEnv,
     'production': ProductionEnv
 }
