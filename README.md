@@ -61,9 +61,11 @@ To https://git.heroku.com/<appname>.git
  * [new branch]      master -> master
 ```
   where <appname> is the name you have chosen above.
+
 5. Go back to the slack page for your bot, and click on `Slash Commands`, under `Features`. Click on `Create New Command`.
   ![Adding a slash command](images/tutorial/add_slash_command.png)
 6. Fill out the create new command dialog with the following parameters:
+
 
   | Field | Value |
   | --- | --- |
@@ -74,7 +76,7 @@ To https://git.heroku.com/<appname>.git
 
   Then click save.
 
-  ![Fill in create command](images/tutorial/create_command_dialog.png)
+  <img alt_text='Fill in create command' width='60%' src='images/tutorial/create_command_dialog.png' />
 7. You may need to reauthorize your app. If so, do it.
 
 You should now be able to call `/hibot en` and have it reply to you!
