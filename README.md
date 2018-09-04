@@ -8,6 +8,8 @@ We need to setup in two places:
 * Slack
 * Heroku
 
+This is a simplified version of a tutorial posted [here](https://medium.com/the-andela-way/how-to-build-a-task-notification-bot-for-slack-with-python-part-1-333cb50985f4). The tutorial this is based off also included Google Docs integration.
+
 ## Setup on Slack
 1. Clone this repo
 2. Go to https://api.slack.com/apps/new to create a new app. Fill in the app name with the name of your bot, and the `Development Slack Workspace` as the name of the workspace you want to use your bot in.
