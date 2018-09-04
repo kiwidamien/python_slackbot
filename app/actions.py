@@ -24,7 +24,9 @@ class Actions:
             'ko': '안녕하세요',
             'el': 'Χαίρετε',
             'fr': 'Bonjour',
-            'de': 'Hallo'
+            'de': 'Hallo',
+            'lt': 'Sveiki',
+            'ru': 'Здравствуйте'
         }
         message = f"{translate.get(lang, 'Hello')} {self.user_info['user']['profile']['display_name']}"
         recipient = self.user_info['user']['id']
