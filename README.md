@@ -21,9 +21,8 @@ We need to setup in two places:
 5.  Copy the slack token and OAuth into your `.env` file:
 ```bash
 FLASK_APP="hellobot.py"
-APP_ENV="development" # leave as development
+APP_ENV="production" # must be production!
 SLACK_CHANNEL=......  # id of the channel the bot posts in; will look something like "CBPK9CPCZ"
-SECRET='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' # some random characters
 OAuth=xoxp-........ # your OAuth will start with xoxp-
 SLACK_TOKEN=xoxb-...# your SLACK_TOKEN will start with xoxb-
 BOTNAME='HelloBot'  # name of the bot
@@ -77,4 +76,10 @@ To https://git.heroku.com/<appname>.git
   ![Fill in create command](images/tutorial/create_command_dialog.png)
 7. You may need to reauthorize your app. If so, do it.
 
+You should now be able to call `/hibot en` and have it reply to you!
+
 ## Going further / customizing
+
+A lot of the code is boilerplate. If you want to add new "slash" commands, then you will need to
+* Go to `app/actions.py` and add a new action that you want to call. Note that you can have the same `/command` map to multiple actions (notice how if you run `/hibot help` as a command, you will get a list of languages)
+* Go to `app/__init__.py` and add a new POST request for your new command. This post request should call the action you created.
