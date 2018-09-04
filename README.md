@@ -68,7 +68,7 @@ To https://git.heroku.com/<appname>.git
   | Field | Value |
   | --- | --- |
   | Command | /hibot |
-  | Request URL | https://<appname>.heroku.com/hibot |
+  | Request URL | https://<appname>.herokuapp.com/hibot |
   | Short description | Say hello in many languages |
   | Usage Hint | [two letter language code] |
 
