@@ -1,6 +1,7 @@
 import time
 from datetime import datetime, date, timedelta
 from config import get_env
+import requests
 
 translate = {
     'chi': '你好',
@@ -16,6 +17,9 @@ translate = {
     'ru': 'Здравствуйте'
 }
 
+people = {
+    ''
+}
 class Actions:
     def __init__(self, slackhelper, user_info=None):
         self.user_info = user_info
@@ -42,3 +46,11 @@ class Actions:
         message = message + ','.join(translate.keys())
         recipient = self.user_info['user']['id']
         self.slackhelper.post_message(message, recipient)
+
+    def post_leaderboard(self, user):
+        r = requests.get('http://https://pingpongslam.herokuapp.com/api/leaderboard/top/50/')
+        msg = f"{'Rank':8s} | {'Name':20s} | {'Record':20s}\n"
+        msg = msg + f'|{'-'*8}|{'*'*20}|{'*'*20}|\n'
+        for record in r.json():
+            msg = msg + f'|{record.rank:8d}|{record.id}|{record.record}|\n'
+        self.slackhelper.post_message_to_channel(msg)

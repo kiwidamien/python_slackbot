@@ -16,10 +16,12 @@ class SlackHelper:
             as_user=True
         )
 
-    def post_message_to_channel(self, message):
+    def post_message_to_channel(self, message, channel=None):
+        if channel is None:
+            channel=self.slack_channel
         return self.slack_client.api_call(
             "chat.postMessage",
-            channel=self.slack_channel,
+            channel=channel,
             text=message,
             username=self.botname,
             parse='full',
